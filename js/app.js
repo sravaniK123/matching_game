@@ -41,21 +41,16 @@ function shuffle(array) {
  */
 
 
-cards.forEach(function(card) {
-    card.addEventListener('click', function(openingCards) {
-      card.classList.toggle('no-click');
-      card.classList.toggle('open');
-      card.classList.toggle('show');
-    })
-  })
+
+    deck.addEventListener('click', function(openingCards) {
+      openingCards.target.classList.add('open','show');
+     })
   
   function resetCards() {
     cards.forEach(function(card) {
-      card.classList.remove('open');
-      card.classList.remove('show');
-      card.classList.remove('no-click');
+      card.classList.remove('open','show','no-click');
     })
-  }
+}
 
   function shuffleAll() {
     let shuffledCards = shuffle(allCards);
@@ -69,6 +64,6 @@ cards.forEach(function(card) {
     shuffleAll();
   }
 
-  document.querySelector('.restart').addEventListener('click', () => {
+  document.querySelector('.restart').addEventListener('click',() => {
     restartGame();
   })
