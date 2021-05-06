@@ -6,6 +6,7 @@ let cards = document.querySelectorAll('.card');
 let allCards = Array.from(document.querySelectorAll('.deck li'));
 
 
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -44,13 +45,14 @@ function shuffle(array) {
 
     deck.addEventListener('click', function(openingCards) {
       openingCards.target.classList.add('open','show');
-     })
-  
+     });
+     
   function resetCards() {
     cards.forEach(function(card) {
       card.classList.remove('open','show','no-click');
     })
 }
+
 
   function shuffleAll() {
     let shuffledCards = shuffle(allCards);
@@ -67,3 +69,5 @@ function shuffle(array) {
   document.querySelector('.restart').addEventListener('click',() => {
     restartGame();
   })
+
+  
